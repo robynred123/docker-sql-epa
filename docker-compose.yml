@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  sql-server:
+     build: ./data/
+     environment:
+       - ACCEPT_EULA=Y
+       - SA_PASSWORD=someThingComplicated1234
+     ports:
+       - 1433:1433
