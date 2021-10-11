@@ -5,16 +5,16 @@ USE mediaPlayer;
 
 CREATE TABLE dbo.Songs (
     songId INT PRIMARY KEY,
-    songName VARCHAR(255),
-    artist VARCHAR(255),
+    songName NVARCHAR(255),
+    artist NVARCHAR(255),
     location VARCHAR(255),
 );
-
+GO
 CREATE TABLE dbo.Playlists (
     playlistId INT PRIMARY KEY,
-    playlistName VARCHAR(255),
+    playlistName NVARCHAR(255),
 );
-
+GO
 CREATE TABLE dbo.PlaylistSongs (
     playlistId INT,
     songId INT,
