@@ -4,25 +4,21 @@ GO
 USE mediaPlayer;
 
 CREATE TABLE Songs (
-    songId INT,
-    songName NVARCHAR(255),
-    artist NVARCHAR(255),
-    location VARCHAR(255),
-    CONSTRAINT PK_SONGS PRIMARY KEY (songId)
+    songId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    songName VARCHAR(50),
+    artist VARCHAR(50),
+    location VARCHAR(255)
 );
-GO
 
 CREATE TABLE Playlists (
-    playlistId INT,
-    playlistName NVARCHAR(255),
-    CONSTRAINT PK_PLAYLISTS PRIMARY KEY (playlistId)
+    playlistId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    playlistName VARCHAR(50)
 );
-GO
 
 CREATE TABLE PlaylistSongs (
     playlistId INT,
     songId INT,
-    CONSTRAINT PK_PLAYLISTSONGS PRIMARY KEY NONCLUSTERED ([playlistId], [songId])
+    PRIMARY KEY (playlistId, songId)
 );
 GO
 
