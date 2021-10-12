@@ -22,23 +22,29 @@ CREATE TABLE PlaylistSongs (
 );
 GO
 
-INSERT INTO Songs (
-    songId,
+INSERT INTO mediaPlayer.dbo.Songs (
     songName,
     artist,
-    location,
+    location
 ) VALUES (
-    1,
 	'FunHouse',
-	'P!nk',
-	'./assets/songs/Funhouse.mp3',
+	'Pink',
+	'./assets/songs/Funhouse.mp3'
 );
+GO
 
-INSERT INTO Playlists (
-    playlistId,
-    playlistName,
+INSERT INTO mediaPlayer.dbo.Playlists (
+    playlistName
+) VALUES (
+	'Rock'
+);
+GO
+
+INSERT INTO mediaPlayer.dbo.PlaylistSongs (
+    playlistId, 
+    songId
 ) VALUES (
     1,
-	'Rock'
+    1
 );
 GO
