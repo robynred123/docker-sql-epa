@@ -3,26 +3,30 @@ GO
 
 USE mediaPlayer;
 
-CREATE TABLE dbo.Songs (
-    songId INT PRIMARY KEY,
+CREATE TABLE Songs (
+    songId INT,
     songName NVARCHAR(255),
     artist NVARCHAR(255),
     location VARCHAR(255),
+    CONSTRAINT PK_SONGS PRIMARY KEY (songId)
 );
 GO
-CREATE TABLE dbo.Playlists (
-    playlistId INT PRIMARY KEY,
+
+CREATE TABLE Playlists (
+    playlistId INT,
     playlistName NVARCHAR(255),
+    CONSTRAINT PK_PLAYLISTS PRIMARY KEY (playlistId)
 );
 GO
-CREATE TABLE dbo.PlaylistSongs (
+
+CREATE TABLE PlaylistSongs (
     playlistId INT,
     songId INT,
     CONSTRAINT PK_PLAYLISTSONGS PRIMARY KEY NONCLUSTERED ([playlistId], [songId])
 );
 GO
 
-INSERT INTO dbo.Songs (
+INSERT INTO Songs (
     songId,
     songName,
     artist,
@@ -34,7 +38,7 @@ INSERT INTO dbo.Songs (
 	'./assets/songs/Funhouse.mp3',
 );
 
-INSERT INTO dbo.Playlists (
+INSERT INTO Playlists (
     playlistId,
     playlistName,
 ) VALUES (
